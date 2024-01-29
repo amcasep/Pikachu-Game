@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }  
+  
+  .pixel-container {
+   width: 25em;
+   height: 25em;
+   }
+  .pixel {
+   width: 1em;
+   height: 1em;
+   animation: moveUpDown 2s infinite;
+   box-shadow:  11em -2em black,
+                4em -1em black, 5em -1em black, 6em -1em black, 10em -1em black, 11em -1em rgb(255, 208, 0), 12em -1em black, 14em -1em black, 15em -1em black, 16em -1em black,
+                4em 0em black, 5em 0em black, 6em 0em rgb(255, 208, 0), 7em 0em black, 10em 0em black, 11em 0em rgb(255, 208, 0), 12em 0em rgb(255, 208, 0), 13em 0em black, 14em 0em rgb(255, 208, 0), 15em 0em black, 16em 0em black, 
+                5em 1em black, 6em 1em rgb(255, 208, 0), 7em 1em rgb(255, 208, 0),  8em 1em black, 9em 1em black, 10em 1em black, 11em 1em black, 12em 1em black, 13em 1em rgb(255, 208, 0), 14em 1em rgb(255, 208, 0), 15em 1em black,
+                6em 2em black, 7em 2em rgb(255, 208, 0), 8em 2em rgb(255, 208, 0), 9em 2em rgb(255, 208, 0), 10em 2em rgb(255, 208, 0), 11em 2em rgb(255, 208, 0), 12em 2em rgb(255, 208, 0), 13em 2em rgb(255, 208, 0), 14em 2em black,
+                6em 3em black, 7em 3em rgb(255, 208, 0), 8em 3em black, 9em 3em rgb(255, 208, 0), 10em 3em rgb(255, 208, 0), 11em 3em rgb(255, 208, 0), 12em 3em black, 13em 3em rgb(255, 208, 0), 14em 3em black,
+                6em 4em black, 7em 4em rgb(255, 208, 0), 8em 4em rgb(255, 208, 0), 9em 4em rgb(255, 208, 0), 10em 4em black, 11em 4em rgb(255, 208, 0), 12em 4em rgb(255, 208, 0), 13em 4em rgb(255, 208, 0), 14em 4em black,
+                5em 5em black, 6em 5em rgb(255, 208, 0), 7em 5em rgb(255, 73, 73), 8em 5em rgb(255, 208, 0), 9em 5em black, 10em 5em black, 11em 5em black, 12em 5em rgb(255, 208, 0), 13em 5em rgb(255, 73, 73), 14em 5em rgb(255, 208, 0), 15em 5em black,
+                5em 6em black, 6em 6em rgb(255, 208, 0), 7em 6em rgb(255, 208, 0), 8em 6em rgb(255, 208, 0), 9em 6em rgb(255, 208, 0), 10em 6em rgb(255, 208, 0), 11em 6em rgb(255, 208, 0), 12em 6em rgb(255, 208, 0), 13em 6em rgb(255, 208, 0), 14em 6em rgb(255, 208, 0), 15em 6em black,
+                5em 7em black, 6em 7em rgb(255, 208, 0), 7em 7em rgb(255, 208, 0), 8em 7em black, 9em 7em rgb(255, 208, 0), 10em 7em rgb(255, 208, 0), 11em 7em rgb(255, 208, 0), 12em 7em black, 13em 7em rgb(255, 208, 0), 14em 7em rgb(255, 208, 0), 15em 7em black,
+                5em 8em black, 6em 8em rgb(255, 208, 0), 7em 8em black, 8em 8em black, 9em 8em rgb(255, 208, 0), 10em 8em rgb(255, 208, 0), 11em 8em rgb(255, 208, 0), 12em 8em black, 13em 8em black, 14em 8em rgb(255, 208, 0), 15em 8em black,
+                5em 9em black, 6em 9em rgb(255, 208, 0), 7em 9em rgb(255, 208, 0), 8em 9em rgb(255, 208, 0), 9em 9em rgb(255, 208, 0), 10em 9em rgb(255, 208, 0), 11em 9em rgb(255, 208, 0), 12em 9em rgb(255, 208, 0), 13em 9em rgb(255, 208, 0), 14em 9em rgb(255, 208, 0), 15em 9em black,
+                6em 10em black, 7em 10em rgb(255, 208, 0), 8em 10em rgb(255, 208, 0), 9em 10em black, 10em 10em black, 11em 10em black, 12em 10em rgb(255, 208, 0), 13em 10em rgb(255, 208, 0), 14em 10em black,
+                7em 11em black, 8em 11em black, 12em 11em black, 13em 11em black
+  }
+
+  @keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+ 
+    50% {
+        transform: translateY(-10px);
+    }
+ 
+    100% {
+        transform: translateY(0);
+    }
+ }
+ 

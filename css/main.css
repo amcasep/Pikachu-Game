@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 220, 125);
+}
+@font-face {
+    font-family: ArcadeClassic;
+    src: url(ARCADECLASSIC);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: ArcadeClassic;
+    color: rgb(58, 58, 58);
+    font-size: 3em;
+    margin: 0 auto;
+}
+
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80vw;
+    height: 850px;
+    background-image: url("pixel\ landscape.jpg");
+    position: relative;
+}
+
+#pikachuGIF {
+    position: absolute;
+    /*bottom: 30px;
+    left: 20px;
+    width: 11vw;*/
+}

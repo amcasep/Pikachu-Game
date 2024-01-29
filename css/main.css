@@ -25,6 +25,7 @@ h1 {
     height: 850px;
     background-image: url("pixel\ landscape.jpg");
     position: relative;
+    overflow: hidden;
 }
 
 #pikachuGIF {
@@ -33,3 +34,17 @@ h1 {
     left: 20px;
     width: 11vw;*/
 }
+
+#WaterPuddle {
+    position: absolute;
+}
+#pikachuLife1 {
+    position: absolute;
+}
+#pikachuLife2 {
+    position: absolute;
+}
+#pikachuLife3 {
+    position: absolute;
+}
+

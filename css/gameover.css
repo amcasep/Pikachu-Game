@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 220, 125);
+}
+@font-face {
+    font-family: ArcadeClassic;
+    src: url(ARCADECLASSIC);
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: ArcadeClassic;
+    color: rgb(58, 58, 58);
+    font-size: 3em;
+    margin: 4vh auto;
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    margin: 5vh auto;
+}
+a {
+    text-decoration: none;
+}
+button {  
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    border: 5px solid rgb(58, 58, 58);
+    font-family: ArcadeClassic;
+    color: rgb(58, 58, 58);
+    font-size: 30px;
+    background-color: rgb(253, 230, 166);
+    padding: 15px 32px;   
+    border-radius: 10px;
+}
+button:hover {
+    background-color: rgb(248, 147, 32);
+    color: white;
+}

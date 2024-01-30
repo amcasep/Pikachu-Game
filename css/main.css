@@ -27,24 +27,53 @@ h1 {
     position: relative;
     overflow: hidden;
 }
-
+/*************** PLAYER ***************/
 #pikachuGIF {
     position: absolute;
-    /*bottom: 30px;
-    left: 20px;
-    width: 11vw;*/
 }
-
-#WaterPuddle {
+/*************** OBSTACLES WATER ***************/
+#Diglett {
     position: absolute;
 }
+/*************** PIKACHU LIVES ***************/
 #pikachuLife1 {
     position: absolute;
+    animation: moveUpDown 2s infinite;
 }
 #pikachuLife2 {
     position: absolute;
+    animation: moveUpDown 2s infinite;
 }
 #pikachuLife3 {
     position: absolute;
+    animation: moveUpDown 2s infinite;
 }
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+ 
+    50% {
+        transform: translateY(-10px);
+    }
+ 
+    100% {
+        transform: translateY(0);
+    }
+ }
+ /*************** OBSTACLES POKEBALLS ***************/
 
+#pokeball {
+    position: absolute;
+}
+#pikachuenergy1 {
+    position: absolute;
+   /* width: 40px;
+    height: 60px; */
+}
+#pikachuenergy2 {
+    position: absolute;
+}
+#pikachuenergy3 {
+    position: absolute;
+}

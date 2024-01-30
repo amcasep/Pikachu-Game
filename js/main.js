@@ -90,7 +90,7 @@ document.addEventListener("keydown", (e) => {
 })
 
 //
-//Water puddles
+//Obstacle Diglett
 //
 
 class Diglett {
@@ -126,25 +126,25 @@ class Diglett {
 }
 const obstaclesDiglett = []
 
-//generating infinite obstacles and pushing them to the array every 7 seconds
+//generating infinite Digletts and pushing them to the array every 10 seconds
 setInterval (() => {
     const diglett = new Diglett();
     obstaclesDiglett.push(diglett)
-}, 8000)
+}, 10000)
 
-//move the obstacles water
+//move the obstacles Diglett
 setInterval(() => {
-    obstaclesDiglett.forEach((obstacleInstance, index) => {
+    obstaclesDiglett.forEach((diglettInstance, index) => {
         //1. move the obstacles
-        obstacleInstance.moveLeft()
+        diglettInstance.moveLeft()
         //2. detect collision
-        if (pikachu.positionX < obstacleInstance.positionX + obstacleInstance.width &&
-            pikachu.positionX + pikachu.width > obstacleInstance.positionX &&
-            pikachu.positionY < obstacleInstance.positionY + obstacleInstance.height &&
-            pikachu.positionY + pikachu.height > obstacleInstance.positionY) {
+        if (pikachu.positionX < diglettInstance.positionX + diglettInstance.width &&
+            pikachu.positionX + pikachu.width > diglettInstance.positionX &&
+            pikachu.positionY < diglettInstance.positionY + diglettInstance.height &&
+            pikachu.positionY + pikachu.height > diglettInstance.positionY) {
                 obstaclesDiglett.splice(index, 1)
-               // console.log(obstacleInstance)
-                obstacleInstance.domElm.style.display = "none"
+               // console.log(diglettInstance)
+               diglettInstance.domElm.style.display = "none"
              //   console.log("collision")
             pikachu.lives--
          //   console.log(pikachu.lives)
@@ -212,7 +212,7 @@ function reducePikachuLives() {
     }
     else if (pikachu.lives === 0) {
        // console.log ("game over")
-   // location.href ="gameover.html"
+    location.href ="gameover.html"
     }
 }
 
@@ -253,27 +253,27 @@ class Pokeballs {
         this.domElm.style.bottom = this.positionY + "vh";
     }
 }
-const obstaclesPokeballs = []
+const energyPokeballs = []
 
 //generating infinite obstacles and pushing them to the array every 7 seconds
 setInterval (() => {
     const pokeball = new Pokeballs();
-    obstaclesPokeballs.push(pokeball)
-}, 2000)
+    energyPokeballs.push(pokeball)
+}, 4000)
 
-//OBSTACLES -> move & detect collision
+//ENERGYPOKEBALLS -> move & detect collision
 setInterval(() => {
-    obstaclesPokeballs.forEach((obstacleInstance, index) => {
+    energyPokeballs.forEach((pokeballInstance, index) => {
      //1. move the obstacles
-     obstacleInstance.moveDown()
+     pokeballInstance.moveDown()
      //2. detect collision
-     if (pikachu.positionX < obstacleInstance.positionX + obstacleInstance.width &&
-        pikachu.positionX + pikachu.width > obstacleInstance.positionX &&
-        pikachu.positionY < obstacleInstance.positionY + obstacleInstance.height &&
-        pikachu.positionY + pikachu.height > obstacleInstance.positionY) {
-            obstaclesPokeballs.splice(index, 1)
-            //console.log(obstacleInstance)
-            obstacleInstance.domElm.style.display = "none"
+     if (pikachu.positionX < pokeballInstance.positionX + pokeballInstance.width &&
+        pikachu.positionX + pikachu.width > pokeballInstance.positionX &&
+        pikachu.positionY < pokeballInstance.positionY + pokeballInstance.height &&
+        pikachu.positionY + pikachu.height > pokeballInstance.positionY) {
+            energyPokeballs.splice(index, 1)
+            //console.log(pokeballInstance)
+            pokeballInstance.domElm.style.display = "none"
             pikachu.energy++
             increasePikachuEnergy ();
             //console.log(pikachu.energy)
@@ -303,7 +303,7 @@ pikachuenergy2.setAttribute("id", "pikachuenergy2")
 pikachuenergy2.src = "energy.png"
 pikachuenergy2.style.width = 3 + "vw"
 pikachuenergy2.style.height = 8 + "vh"
-pikachuenergy2.style.left = 5 + "vw"
+pikachuenergy2.style.left = 6 + "vw"
 pikachuenergy2.style.top = 3 + "vh"
 pikachuenergy2.style.display = "none"
 document.getElementById("gameContainer").appendChild(pikachuenergy2)
@@ -313,24 +313,157 @@ pikachuenergy3.setAttribute("id", "pikachuenergy3")
 pikachuenergy3.src = "energy.png"
 pikachuenergy3.style.width = 3 + "vw"
 pikachuenergy3.style.height = 8 + "vh"
-pikachuenergy3.style.left = 8 + "vw"
+pikachuenergy3.style.left = 10 + "vw"
 pikachuenergy3.style.top = 3 + "vh"
 pikachuenergy3.style.display = "none"
 document.getElementById("gameContainer").appendChild(pikachuenergy3)
 
-// const shoot = document.
+const shoot = document.createElement("p")
+shoot.innerText = "SHOOT!"
+shoot.style.left = 15 + "vw"
+shoot.style.top = -3.5 + "vh"
+shoot.style.display = "none"
+document.getElementById("gameContainer").appendChild(shoot)
+
 //
 //Increasing Energy
 //
 
 function increasePikachuEnergy () {
     if (pikachu.energy === 1) {
-        document.getElementById("pikachuenergy1").style.display = "block"
+        pikachuenergy1.style.display = "block"
     }
     else if (pikachu.energy === 2) {
-        document.getElementById("pikachuenergy2").style.display = "block"
+        pikachuenergy2.style.display = "block"
     }
     else if (pikachu.energy === 3) {
-        document.getElementById("pikachuenergy3").style.display = "block"
+        pikachuenergy3.style.display = "block"
+        shoot.style.display = "block"
     }
 }
+
+//
+//Obstacle Pidgey
+//
+
+class Pidgey {
+    constructor () {
+        this.width = 10
+        this.height = 20
+        this.positionX = 90;
+        this.positionY = Math.floor(Math.random() * (50 - this.height +1))
+        this.domElm = null
+
+        this.createDomELement();   
+    }
+    createDomELement () {
+        // step1: create the element
+        this.domElm = document.createElement("img");
+    
+        // step2: add content or modify
+        this.domElm.setAttribute("id", "pidgey")
+        this.domElm.src = "pidgey.gif"
+        this.domElm.style.width =  this.width + "vw"
+        this.domElm.style.height = this.height + "vh"
+        this.domElm.style.left = this.positionX + "vw";
+        this.domElm.style.bottom = this.positionY + "vh";
+    
+         //step3: append to the dom: `parentElm.appendChild()`
+         const container = document.getElementById("gameContainer");
+         container.appendChild(this.domElm)
+    }
+    moveLeft (){
+        this.positionX--
+        this.domElm.style.left = this.positionX + "vw";
+    }
+}
+
+
+const obstaclesPidgey = []
+
+//generating infinite obstacles and pushing them to the array every 7 seconds
+setInterval (() => {
+    const pidgey = new Pidgey();
+    obstaclesPidgey.push(pidgey)
+}, 25000)
+
+//move the obstacles Pidgey & detect collision with pikachu
+setInterval(() => {
+    obstaclesPidgey.forEach((pidgeyInstance, index) => {
+        //1. move the obstacles
+        pidgeyInstance.moveLeft()
+        //2. detect collision
+        if (pikachu.positionX < pidgeyInstance.positionX + pidgeyInstance.width &&
+            pikachu.positionX + pikachu.width > pidgeyInstance.positionX &&
+            pikachu.positionY < pidgeyInstance.positionY + pidgeyInstance.height &&
+            pikachu.positionY + pikachu.height > pidgeyInstance.positionY) {
+                obstaclesPidgey.splice(index, 1)
+               // console.log(pidgeyInstance)
+               pidgeyInstance.domElm.style.display = "none"
+             //   console.log("collision")
+            pikachu.lives--
+         //   console.log(pikachu.lives)
+            reducePikachuLives()
+        }
+    })
+}, 50)
+
+//
+//Shooting Lightnings
+//
+class Lightnings {
+    constructor () {
+        this.width = 2
+        this.height = 2
+        this.positionX = pikachu.positionX + pikachu.width;
+        this.positionY = pikachu.positionY + pikachu.height / 2;
+        this.domElm = null
+
+        this.createDomELement();
+    }
+createDomELement () {
+    // step1: create the element
+    this.domElm = document.createElement("img");
+
+    // step2: add content or modify
+    this.domElm.setAttribute("id", "lightning")
+    this.domElm.src = "lightning.png"
+    this.domElm.style.width =  this.width + "vw"
+    this.domElm.style.height = this.height + "vh"
+    this.domElm.style.left = this.positionX + "vw";
+    this.domElm.style.bottom = this.positionY + "vh";
+
+     //step3: append to the dom: `parentElm.appendChild()`
+     const container = document.getElementById("gameContainer");
+     container.appendChild(this.domElm)
+}
+moveRight(){
+    this.positionX++
+    this.domElm.style.left = this.positionX + "vw";
+    }
+}
+
+document.addEventListener("keydown", (e) => {
+    if (e.code === "Space" && pikachu.energy >= 3) {
+        const lightning = new Lightnings();
+        pikachu.energy = 0;
+        pikachuenergy1.style.display = "none"
+        pikachuenergy2.style.display = "none"
+        pikachuenergy3.style.display = "none"
+        shoot.style.display = "none"
+        setInterval(() => {
+            //1. move the lightnings
+            lightning.moveRight()
+            //2. detect collision between lightnings and pidgeys
+            obstaclesPidgey.forEach((pidgeyInstance, index) => {
+                if (lightning.positionX < pidgeyInstance.positionX + pidgeyInstance.width &&
+                    lightning.positionX + lightning.width > pidgeyInstance.positionX &&
+                    lightning.positionY < pidgeyInstance.positionY + pidgeyInstance.height &&
+                    lightning.positionY + lightning.height > pidgeyInstance.positionY) {
+                        obstaclesPidgey.splice(index, 1)
+                       pidgeyInstance.domElm.style.display = "none"
+                }
+            });
+        }, 50)
+    }
+});

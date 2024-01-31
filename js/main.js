@@ -142,9 +142,9 @@ setInterval(() => {
             pikachu.positionX + pikachu.width > diglettInstance.positionX &&
             pikachu.positionY < diglettInstance.positionY + diglettInstance.height &&
             pikachu.positionY + pikachu.height > diglettInstance.positionY) {
-                obstaclesDiglett.splice(index, 1)
+                obstaclesDiglett.splice(index, 1)  // removes from the array the colliding obstacle sothat its not counting over the whole pixels amount
                // console.log(diglettInstance)
-               diglettInstance.domElm.style.display = "none"
+               diglettInstance.domElm.style.display = "none" //remove the colliding obstacle sothat it disappears from the screen
              //   console.log("collision")
             pikachu.lives--
          //   console.log(pikachu.lives)
@@ -212,7 +212,7 @@ function reducePikachuLives() {
     }
     else if (pikachu.lives === 0) {
        // console.log ("game over")
-    //location.href ="gameover.html"
+    location.href ="gameover.html"
     }
 }
 
@@ -274,9 +274,14 @@ setInterval(() => {
             energyPokeballs.splice(index, 1)
             //console.log(pokeballInstance)
             pokeballInstance.domElm.style.display = "none"
+
             pikachu.energy++
             increasePikachuEnergy ();
+
+            let pokeAudio = document.querySelector('#pokeAudio')
+            pokeAudio.play()
             //console.log(pikachu.energy)
+            animatedCounter (5)
         }
     })
  }, 20)
@@ -385,7 +390,7 @@ const obstaclesPidgey = []
 setInterval (() => {
     const pidgey = new Pidgey();
     obstaclesPidgey.push(pidgey)
-}, 25000)
+}, 22000)
 
 //move the obstacles Pidgey & detect collision with pikachu
 setInterval(() => {
@@ -466,15 +471,19 @@ document.addEventListener("keydown", (e) => {
                     lightning.positionY + lightning.height > pidgeyInstance.positionY) {
                         obstaclesPidgey.splice(index, 1)
                        pidgeyInstance.domElm.style.display = "none"
+                       animatedCounter(20)
                 }
             });
         }, 50)
     }
 });
 
+//
+// MUSIC
+//
+
 let myAudio = document.querySelector('#audio')
 myAudio.play()
-
 
 let muteButton = document.getElementById("mute")
 let unmuteButton = document.getElementById("unmute")
@@ -499,18 +508,26 @@ const handleButtonUmute = () => {
 muteButton.addEventListener("click", handleButtonMute)
 unmuteButton.addEventListener("click", handleButtonUmute)
 
-// document.addEventListener("click", () => {
-//     if (!myAudio.)
-//     //     document.getElementById("mute").style.display = "none"
-//     //     document.getElementById("unmute").style.display = "block"
-//     //     myAudio.pause()
+//
+// COUNTER
+//
+let counter = document.getElementById("numbersScore")
+let currentNumber = 0
+let totalSum = 0
+function animatedCounter (number) {
+    const sumNumbers = setInterval (() => {
+        currentNumber++;
+        totalSum++;
+        counter.innerText = totalSum;
 
-//     //     document.addEventListener("click", () => {
-//     //         document.getElementById("mute").style.display = "block"
-//     //         document.getElementById("unmute").style.display = "none"
-//     //         myAudio.play()            
-//     // })
-// })
-
+        if (currentNumber === number) {
+            clearInterval (sumNumbers)
+        }
+        if (totalSum === 100) {
+            location.href ="https://www.youtube.com/watch?v=7T9NjZiAQG8"
+        }
+    }, 50);
+    currentNumber = 0;
+}
 
 

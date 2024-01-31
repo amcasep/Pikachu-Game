@@ -7,7 +7,7 @@ body {
     font-family: ArcadeClassic;
     src: url(ARCADECLASSIC);
 }
-
+/*
 h1 {
     display: flex;
     justify-content: center;
@@ -16,11 +16,12 @@ h1 {
     font-size: 3em;
     margin: 0 auto;
 }
-
+*/
 #gameContainer {
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    margin-top: 55px;
     width: 80vw;
     height: 850px;
     background-image: url("pixel\ landscape.jpg");
@@ -88,16 +89,26 @@ p {
     text-shadow: rgb(255, 255, 255) 3px 0px 10px;;
     /*text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;*/
 }
+#score {
+    margin: 30px auto;
+    padding-right: 30px;
+}
+#numbersScore {
+    margin: 90px auto;
+    padding-right: 30px;
+}
 
  /*************** OBSTACLES PIDGEYS ***************/
 
  #pidgey {
     position: absolute;
+    animation: moveUpDown 2s infinite;
  }
   /*************** SHOOTING LIGHTNINGS ***************/
  #lightning {
     position: absolute;
  }
+   /*************** MUTE / UNMUTE BUTTONS + BACK TO START ***************/
 #mute {
     width: 5vw;
     position: absolute;
@@ -116,5 +127,22 @@ p {
     margin-top: -5px;
 }
 #unmute:hover{
+    margin-top: -5px;
+}
+
+#backToStart{
+    position: absolute; 
+    top: 50vh;
+    right: 48px;
+    width: 95px;
+    height: 95px;
+    background-color: #ececec00;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    font-family: ArcadeClassic;
+    color: rgb(58, 58, 58);
+    font-size: 1.5em;  
+}
+#backToStart:hover{
     margin-top: -5px;
 }

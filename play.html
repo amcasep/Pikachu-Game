@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <h1>Pika-shoot!</h1>
+    <!--<h1>Pika-shoot!</h1>-->
 
     <div id="gameContainer">
         <!--<img id="pikachuGIF" src="./Pikachu running.gif" alt="pikachu runnning">-->
@@ -18,15 +18,20 @@
         <!--<img id="pokeball" src="./Pokeball.gif" alt="">-->
         <!--<img id = "energy" src="./energy.png" alt="">-->
         <!--<img id = "pidgey" src="./pidgey.gif" alt="">-->
-        
+        <p id = "score">Score</p>
+        <p data-target="1000" id = "numbersScore">0</p>
     </div>
+
+    <!--MUTE / UNMUTE BUTTONS + BACK TO START BUTTON-->
     <img id="mute" src="./mute.png" alt="mute button">
     <img id="unmute" src="./unmute.png" alt="umute button">
-    
-    
-
+    <a href="./index.html"><button id="backToStart">Start <br>Page</button></body></a>
+    <!-----------------------AUDIOS----------------------->
     <audio id="audio" src="./Sakura-Girl-Peach-chosic.com_.mp3"></audio>
     <audio id="pikaAudio" src="./pikachu!-(pokemon-go-sound)-made-with-Voicemod.mp3"></audio>
+    <audio id="pokeAudio"src="./pokeball_sound_effects_mp3cut_3.mp3"></audio>
+
+    
     
     
     <script src="./js/main.js"></script>

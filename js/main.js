@@ -446,6 +446,10 @@ moveRight(){
 document.addEventListener("keydown", (e) => {
     if (e.code === "Space" && pikachu.energy >= 3) {
         const lightning = new Lightnings();
+
+        let pikaAudio = document.querySelector('#pikaAudio')
+        pikaAudio.play()
+
         pikachu.energy = 0;
         pikachuenergy1.style.display = "none"
         pikachuenergy2.style.display = "none"
@@ -467,3 +471,6 @@ document.addEventListener("keydown", (e) => {
         }, 50)
     }
 });
+
+let myAudio = document.querySelector('#audio')
+myAudio.play()

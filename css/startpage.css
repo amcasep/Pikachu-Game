@@ -65,7 +65,10 @@ a {
 #gameboy {
     display: flex;
     justify-content: center;
-    height: 20vh;
+    height: 25vh;
     margin: 30px auto;
     padding-left: 40px;
+}
+#gameboy:hover {
+  margin-top: -10px;
 }

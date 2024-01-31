@@ -32,7 +32,7 @@ h2{
 #instructions{
     display: flex;
     justify-content: center;
-    margin: 10px auto;
+    margin: 0 auto;
     width: 500px;
 }
 p{
@@ -40,6 +40,7 @@ p{
     color: rgb(58, 58, 58);      
     text-align: justify;
     font-size: 1.2em;
+    margin: 10px auto;
 }
 /*
 button {  

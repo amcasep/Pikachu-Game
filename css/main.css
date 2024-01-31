@@ -98,3 +98,23 @@ p {
  #lightning {
     position: absolute;
  }
+#mute {
+    width: 5vw;
+    position: absolute;
+    top: 50vh;
+    left: 45px;
+    display: block;
+}
+#unmute {
+    width: 5vw;
+    position: absolute;
+    top: 50vh;
+    left: 45px;
+    display: none;
+}
+#mute:hover{
+    margin-top: -5px;
+}
+#unmute:hover{
+    margin-top: -5px;
+}

@@ -22,7 +22,7 @@ class Pikachu {
         this.domElm = null
 
         this.createDomELement();
-        
+
     }
 createDomELement () {
     // step1: create the element
@@ -45,7 +45,7 @@ moveLeft(){
         this.positionX--
         this.domElm.style.left = this.positionX + "vw";
     }
-    
+
 }
 moveRight(){
     if (this.positionX + this.width < 100) {
@@ -101,12 +101,12 @@ class Diglett {
         this.positionY = 3;
         this.domElm = null
 
-        this.createDomELement();   
+        this.createDomELement();
     }
     createDomELement () {
         // step1: create the element
         this.domElm = document.createElement("img");
-    
+
         // step2: add content or modify
         this.domElm.setAttribute("id", "Diglett")
         this.domElm.src = "diglett.gif"
@@ -114,7 +114,7 @@ class Diglett {
         this.domElm.style.height = this.height + "vh"
         this.domElm.style.left = this.positionX + "vw";
         this.domElm.style.bottom = this.positionY + "vh";
-    
+
          //step3: append to the dom: `parentElm.appendChild()`
          const container = document.getElementById("gameContainer");
          container.appendChild(this.domElm)
@@ -212,7 +212,7 @@ function reducePikachuLives() {
     }
     else if (pikachu.lives === 0) {
        // console.log ("game over")
-    location.href ="gameover.html"
+    //location.href ="gameover.html"
     }
 }
 
@@ -228,13 +228,13 @@ class Pokeballs {
         this.positionY = 100
         this.domElm = null
 
-        this.createDomELement();   
+        this.createDomELement();
     }
 
     createDomELement () {
         // step1: create the element
         this.domElm = document.createElement("img");
-    
+
         // step2: add content or modify
         this.domElm.setAttribute("id", "pokeball")
         this.domElm.src = "Pokeball.gif"
@@ -242,7 +242,7 @@ class Pokeballs {
         this.domElm.style.height = this.height + "vh"
         this.domElm.style.left = this.positionX + "vw";
         this.domElm.style.bottom = this.positionY + "vh";
-    
+
          //step3: append to the dom: `parentElm.appendChild()`
          const container = document.getElementById("gameContainer");
          container.appendChild(this.domElm)
@@ -354,12 +354,12 @@ class Pidgey {
         this.positionY = Math.floor(Math.random() * (50 - this.height +1))
         this.domElm = null
 
-        this.createDomELement();   
+        this.createDomELement();
     }
     createDomELement () {
         // step1: create the element
         this.domElm = document.createElement("img");
-    
+
         // step2: add content or modify
         this.domElm.setAttribute("id", "pidgey")
         this.domElm.src = "pidgey.gif"
@@ -367,7 +367,7 @@ class Pidgey {
         this.domElm.style.height = this.height + "vh"
         this.domElm.style.left = this.positionX + "vw";
         this.domElm.style.bottom = this.positionY + "vh";
-    
+
          //step3: append to the dom: `parentElm.appendChild()`
          const container = document.getElementById("gameContainer");
          container.appendChild(this.domElm)
@@ -474,3 +474,43 @@ document.addEventListener("keydown", (e) => {
 
 let myAudio = document.querySelector('#audio')
 myAudio.play()
+
+
+let muteButton = document.getElementById("mute")
+let unmuteButton = document.getElementById("unmute")
+
+function mute() {
+    document.getElementById("mute").style.display = "none"
+    document.getElementById("unmute").style.display = "block"
+    myAudio.pause()
+}
+function unmute() {
+    document.getElementById("mute").style.display = "block"
+    document.getElementById("unmute").style.display = "none"
+    myAudio.play() 
+}
+
+const handleButtonMute = () => {
+    mute()
+}
+const handleButtonUmute = () => {
+    unmute()
+}
+muteButton.addEventListener("click", handleButtonMute)
+unmuteButton.addEventListener("click", handleButtonUmute)
+
+// document.addEventListener("click", () => {
+//     if (!myAudio.)
+//     //     document.getElementById("mute").style.display = "none"
+//     //     document.getElementById("unmute").style.display = "block"
+//     //     myAudio.pause()
+
+//     //     document.addEventListener("click", () => {
+//     //         document.getElementById("mute").style.display = "block"
+//     //         document.getElementById("unmute").style.display = "none"
+//     //         myAudio.play()            
+//     // })
+// })
+
+
+

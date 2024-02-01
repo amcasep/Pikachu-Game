@@ -48,7 +48,7 @@ moveLeft(){
 
 }
 moveRight(){
-    if (this.positionX + this.width < 100) {
+    if (this.positionX + this.width < 81) {
         this.positionX++
         this.domElm.style.left = this.positionX + "vw";
     }
@@ -57,12 +57,12 @@ jump(){
     const jumpUp = setInterval(() => {
     this.positionY += 3
     this.domElm.style.bottom = this.positionY + "vh";
-    if (this.positionY === 40) {clearInterval(jumpUp)}
+    if (this.positionY >= 40) {clearInterval(jumpUp)}
     }, 20)
     const jumpDown = setInterval(() => {
     this.positionY--
     this.domElm.style.bottom = this.positionY + "vh";
-    if (this.positionY === 3) {clearInterval(jumpDown)}
+    if (this.positionY <= 3) {clearInterval(jumpDown)}
     }, 20)
 }
 }

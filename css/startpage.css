@@ -39,7 +39,7 @@ p{
     font-family: ArcadeClassic;
     color: rgb(58, 58, 58);      
     text-align: justify;
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: 10px auto;
 }
 /*
@@ -63,6 +63,15 @@ a {
     text-decoration: none;
 }
 */
+#keysKeyboard{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 500px;
+    height: 300px;
+    padding-left: 43px;
+}
+
 #gameboy {
     display: flex;
     justify-content: center;

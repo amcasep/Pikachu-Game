@@ -13,7 +13,7 @@ h1 {
     font-family: ArcadeClassic;
     color: rgb(58, 58, 58);
     font-size: 4em;
-    margin: 4vh auto 0 auto;
+    margin: 2vh auto 0 auto;
 }
 img {
     display: flex;
@@ -24,7 +24,7 @@ img {
 h2{
     display: flex;
     justify-content: center;
-    margin: 20px auto;
+    margin: 10px auto;
     font-family: ArcadeClassic;
     color: rgb(58, 58, 58);
     font-size: 2.2em;
@@ -32,15 +32,15 @@ h2{
 #instructions{
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 2vh auto;
     width: 500px;
 }
 p{
     font-family: ArcadeClassic;
     color: rgb(58, 58, 58);      
     text-align: justify;
-    font-size: 1.4em;
-    margin: 10px auto;
+    font-size: 1.2em;
+    margin: 0 auto;
 }
 /*
 button {  
@@ -66,19 +66,19 @@ a {
 #keysKeyboard{
     display: flex;
     justify-content: center;
-    margin: 0 auto;
-    width: 500px;
-    height: 300px;
+    margin: 1vh auto;
+    width: 300px;
+    height: 200px;
     padding-left: 43px;
 }
 
 #gameboy {
     display: flex;
     justify-content: center;
-    height: 25vh;
+    height: 20vh;
     margin: 30px auto;
-    padding-left: 40px;
+    padding-left: 45px;
 }
 #gameboy:hover {
-  margin-top: -10px;
+  margin-top: -1px;
 }

@@ -255,7 +255,7 @@ class Pokeballs {
 }
 const energyPokeballs = []
 
-//generating infinite obstacles and pushing them to the array every 7 seconds
+//generating infinite Pokeballs and pushing them to the array every 4 seconds
 setInterval (() => {
     const pokeball = new Pokeballs();
     energyPokeballs.push(pokeball)

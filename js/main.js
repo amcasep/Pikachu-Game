@@ -489,13 +489,13 @@ let muteButton = document.getElementById("mute")
 let unmuteButton = document.getElementById("unmute")
 
 function mute() {
-    document.getElementById("mute").style.display = "none"
-    document.getElementById("unmute").style.display = "block"
+    muteButton.style.display = "none"
+    unmuteButton.style.display = "block"
     myAudio.pause()
 }
 function unmute() {
-    document.getElementById("mute").style.display = "block"
-    document.getElementById("unmute").style.display = "none"
+    muteButton.style.display = "block"
+    unmuteButton.style.display = "none"
     myAudio.play() 
 }
 
@@ -507,6 +507,10 @@ const handleButtonUmute = () => {
 }
 muteButton.addEventListener("click", handleButtonMute)
 unmuteButton.addEventListener("click", handleButtonUmute)
+
+document.querySelector('#startpage').addEventListener("click", () => {
+    document.location.href = "index.html"
+})
 
 //
 // COUNTER

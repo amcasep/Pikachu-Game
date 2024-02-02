@@ -21,9 +21,9 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 55px;
+    margin-top: 6vh;
     width: 80vw;
-    height: 850px;
+    height: 85vh;
     background-image: url("pixel\ landscape.jpg");
     position: relative;
     overflow: hidden;
@@ -130,19 +130,12 @@ p {
     margin-top: -5px;
 }
 
-#backToStart{
+#startpage{
+    width: 5vw;
     position: absolute; 
     top: 50vh;
-    right: 48px;
-    width: 95px;
-    height: 95px;
-    background-color: #ececec00;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 50%;
-    font-family: ArcadeClassic;
-    color: rgb(58, 58, 58);
-    font-size: 1.5em;  
+    right: 45px;
 }
-#backToStart:hover{
+#startpage:hover{
     margin-top: -5px;
 }

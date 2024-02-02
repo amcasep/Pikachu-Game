@@ -25,6 +25,8 @@ h1 {
     width: 80vw;
     height: 85vh;
     background-image: url("pixel\ landscape.jpg");
+    background-size: cover;
+ 
     position: relative;
     overflow: hidden;
 }

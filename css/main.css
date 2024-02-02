@@ -21,11 +21,11 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 6vh;
+    margin-top: 5vh;
     width: 80vw;
-    height: 85vh;
+    height: 90vh;
     background-image: url("pixel\ landscape.jpg");
-    background-size: cover;
+    background-size: contain;
  
     position: relative;
     overflow: hidden;
